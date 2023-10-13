@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Value Lookup</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #121212; /* Dark background color */
+            color: white; /* Text color */
+        }
+
+        #header {
+            background: #FF5733; /* Choose a different color */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            background: #1E1E1E; /* Container background color */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s;
+        }
+
+        .loading-spinner {
+            display: none;
+            text-align: center;
+        }
+
+        .loading-spinner .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            animation: spin 2s linear infinite;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white; /* Table text color */
+        }
+
+        th, td {
+            border: 1px solid #FF5733; /* Choose a different color */
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background: #FF5733; /* Choose a different color */
+        }
+
+        tr:nth-child(even) {
+            background-color: #2A2A2A; /* Table row background color */
+        }
+
+        textarea {
+            background: #2A2A2A; /* Text area background color */
+            color: white; /* Text area text color */
+            border: 1px solid #FF5733; /* Choose a different color */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div id="header">
+            <h1>Malware Detector</h1>
+        </div>
+
+        <form class="text-center">
+            <div class="form-group">
+                <textarea class="form-control" name="textArea" rows="10" placeholder="Enter file hash MD5, SHA-1, or SHA-256"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <form class="text-center mt-3" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" class="form-control-file" name="inputFile">
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+
+        <div class="loading-spinner mt-4">
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>File Hash</th>
+                    <th>Positives</th>
+                    <th>Symantec</th>
+                    <th>Symantec Result</th>
+                    <th>Symantec Update</th>
+                    <th>TrendMicro</th>
+                    <th>Sophos</th>
+                    <th>McAfee</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in resultVT %}
+                <tr>
+                    <td><a href="{{ row[9] }}" target="_blank">{{ row[0] }}</a></td>
+                    <td class="text-light">{{ row[1] }}/{{ row[2] }}</td>
+                    <td class="text-light">{{ row[3] }}</td>
+                    <td class="text-light">{{ row[4] }}</td>
+                    <td class="text-light">{{ row[5] }}</td>
+                    <td class="text-light">{{ row[6] }}</td>
+                    <td class="text-light">{{ row[7] }}</td>
+                    <td class="text-light">{{ row[8] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Simulate loading with a delay (you can replace this with actual loading logic)
+        document.querySelector('.loading-spinner').style.display = 'block';
+        setTimeout(function() {
+            document.querySelector('.loading-spinner').style.display = 'none';
+        }, 2000); // Change 2000 to your desired loading time in milliseconds
+    </script>
+</body>
+</html>
