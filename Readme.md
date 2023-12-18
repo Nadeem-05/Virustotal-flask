@@ -2,27 +2,40 @@
 
 ## Introduction
 The Virus Checker web application built using Flask interacts with the VirusTotal API to determine if a file is identified as a virus by various antivirus engines. It allows users to upload a file or input a hash value to perform a virus scan and obtain the scan results.
-
 ## Setup
 
-### Prerequisites
-Ensure the following dependencies are installed:
+### Virtual Environment Setup
 
-- Python 3.x
-- Flask
-- urllib3
-- Werkzeug
-- gunicorn [When Deployed]
-- requests
-- python-dotenv
+#### Create a Virtual Environment
+1. Open a terminal or command prompt.
+2. Clone or Download the project
+3. Navigate to the project directory.
+4. Run the following command to create a virtual environment named `venv`:
+   ```
+   python -m venv venv
+   ```
+
+#### Activate the Virtual Environment
+- Activate the virtual environment based on your operating system:
+
+   - **Windows**:
+     ```
+     venv\Scripts\activate
+     ```
+
+   - **Mac/Linux**:
+     ```
+     source venv/bin/activate
+     ```
 
 ### Installation
-1. Clone or download the project repository.
-2. Navigate to the project directory.
-3. Install dependencies by running: `pip install -r requirements.txt`.
 
-## Usage
-
+#### Install Dependencies
+1. Ensure the virtual environment is activated.
+2. Run the following command to install required dependencies from `requirements.txt`:
+   ```
+   pip install -r requirements.txt
+   ```
 ### Configuration
 
 #### Environment File Setup
