@@ -1,0 +1,6 @@
+Flask
+urllib3
+Werkzeug
+gunicorn
+requests
+dotenv
