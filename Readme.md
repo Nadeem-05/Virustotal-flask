@@ -83,6 +83,7 @@ The Virus Checker web application built using Flask interacts with the VirusTota
 
 ### Execution
 - The Flask app runs on port 5001 by default and can be accessed in a web browser. To be noted a default hash is hardcoded for demo. Please remove it if unnecassary
+- A Deployed Demo is available at :- [Demo](https://nadvt.onrender.com)
 
 ## Screenshots
 
