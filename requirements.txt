@@ -3,4 +3,4 @@ urllib3
 Werkzeug
 gunicorn
 requests
-dotenv
+Python-dotenv
