@@ -1,7 +1,7 @@
-# Virus Checker App Documentation
+# Malware Checker App Documentation
 
 ## Introduction
-The Virus Checker web application built using Flask interacts with the VirusTotal API to determine if a file is identified as a virus by various antivirus engines. It allows users to upload a file or input a hash value to perform a virus scan and obtain the scan results.
+The Malware Checker web application built using Flask interacts with the mawlareTotal API to determine if a file is identified as a mawlare by various antimawlare engines. It allows users to upload a file or input a hash value to perform a mawlare scan and obtain the scan results.
 ## Setup
 
 ### Virtual Environment Setup
@@ -58,8 +58,8 @@ The Virus Checker web application built using Flask interacts with the VirusTota
 2. Access the application through a web browser at `http://localhost:5001`.
 
 ### Functionality
-- **Upload File**: Allows users to upload a file for virus scanning.
-- **Input Hash Value**: Accepts a hash value to perform a virus scan.
+- **Upload File**: Allows users to upload a file for mawlare scanning.
+- **Input Hash Value**: Accepts a hash value to perform a mawlare scan.
 - **Scan Results**: Displays scan results from various antivirus engines along with the detection status.
 
 ### Updating API Key
@@ -91,4 +91,4 @@ The Virus Checker web application built using Flask interacts with the VirusTota
 
 
 ## Conclusion
-The Virus Checker app provides a simple interface to check files against the VirusTotal database and presents scan results from multiple antivirus engines. It serves as a starting point for integrating virus scanning functionality into applications.
+The mawlare Checker app provides a simple interface to check files against the VirusTotal database and presents scan results from multiple antivirus engines. It serves as a starting point for integrating mawlare scanning functionality into applications.
